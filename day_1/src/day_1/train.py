@@ -40,7 +40,7 @@ def read_dataframe(filename: str) -> pd.DataFrame:
         logger.exception(e)
         raise
 
-def train(train_date: date, val_date: date, out_path: str) -> None:
+def train(train_date: date, val_date: date, out_path: str) -> float:
     """Train and validate a model on specified dates and save it.
 
     Args:
@@ -76,6 +76,9 @@ def train(train_date: date, val_date: date, out_path: str) -> None:
     pipeline.fit(train_dicts, y_train)
     y_pred = pipeline.predict(val_dicts)
 
-    logger.info(f"MSE: {mean_squared_error(y_val, y_pred, squared=False)}")
+    mse = mean_squared_error(y_val, y_pred, squared=False)
+    logger.info(f"MSE: {mse}")
     with open(out_path, 'wb') as f_out:
         pickle.dump(pipeline, f_out)
+
+    return mse

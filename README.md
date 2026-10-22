@@ -62,3 +62,10 @@ cd ..
 ### create a Makefile
 - `touch Makefile`
 - now we can train via just `make train`
+
+### tests
+- `uv add pytest`
+- `mkdir tests`
+- create a `__init__.py` inside of tests/ folder (`touch tests/__init__.py`)
+- create a `test_train.py` file inside of the tests folder (has to start with `test_`) (`touch tests/test_train.py`)
+- run tests with `uv run pytest` or `make test`

@@ -1,3 +1,6 @@
+.PHONY: test
+test:
+	uv run pytest
 
 .PHONY: train
 train:
