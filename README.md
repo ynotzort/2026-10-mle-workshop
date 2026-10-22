@@ -29,3 +29,6 @@ cd ..
 - `uv add scikit-learn==1.2.2 pandas pyarrow`
 - `uv add --dev jupyter seaborn`
 - TODO: fix numpy 
+
+### launch jupyter notebook
+- `uv run jupyter notebook`
