@@ -12,7 +12,16 @@ from sklearn.pipeline import make_pipeline
 from sklearn.metrics import mean_squared_error
 
 
-def read_dataframe(filename):
+def read_dataframe(filename: str) -> pd.DataFrame:
+    """loads and preprocesses the NYC Taxi dataset
+
+    Args:
+        filename (str): path or url to the dataset
+
+    Returns:
+        pd.DataFrame: processed dataframe
+    """
+
     df = pd.read_parquet(filename)
 
     df['duration'] = df.lpep_dropoff_datetime - df.lpep_pickup_datetime
@@ -25,7 +34,15 @@ def read_dataframe(filename):
     
     return df
 
-def train(train_date: date, val_date: date, out_path: str):
+def train(train_date: date, val_date: date, out_path: str) -> None:
+    """Train and validate a model on specified dates and save it.
+
+    Args:
+        train_date (date): training date
+        val_date (date): validation date
+        out_path (str): where to save it
+    """
+
     base_url = "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_{year}-{month:02d}.parquet"
     train_url = base_url.format(year=train_date.year, month=train_date.month)
     val_url = base_url.format(year=val_date.year, month=val_date.month)

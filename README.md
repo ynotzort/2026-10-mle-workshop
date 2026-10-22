@@ -54,3 +54,4 @@ cd ..
 - use argparse for parsing, and call via `uv run python src/day_1/train.py --train-date=2022-01 --val-date=2022-02 --model-save-path=model.pkl`
     - alternatives are https://github.com/fastapi/typer and fire.
 - create a model folder: `mkdir models` and use `uv run python src/day_1/train.py --train-date=2022-01 --val-date=2022-02 --model-save-path=models/2022-01.pkl`
+- add typing and docstrings
