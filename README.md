@@ -57,3 +57,4 @@ cd ..
 - add typing and docstrings
 - add simple error handling
 - add logging: `uv add loguru`
+- split out the argparse into main.py. now we can run it via `uv run python src/day_1/main.py --train-date=2022-01 --val-date=2022-02 --model-save-path=models/2022-01.pkl` or alternativel using the module mode: `uv run python -m src.day_1.main --train-date=2022-01 --val-date=2022-02 --model-save-path=models/2022-01.pkl`
