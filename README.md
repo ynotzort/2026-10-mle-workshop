@@ -49,4 +49,5 @@ cd ..
 - get rid of matplotlib and seaborn
 - try to run the script: `uv run python src/day_1/train.py`
 - create a train function and entrypoint `if __name__=="__main__":`
+- introduce pipeline code
 
