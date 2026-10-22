@@ -3,6 +3,7 @@
 
 from datetime import date
 import argparse
+from loguru import logger
 
 import pandas as pd
 import pickle
@@ -35,8 +36,8 @@ def read_dataframe(filename: str) -> pd.DataFrame:
         
         return df
     except Exception as e:
-        print(f"ERROR: reading {filename} failed")
-        print(e)
+        logger.error(f"ERROR: reading {filename} failed")
+        logger.exception(e)
         raise
 
 def train(train_date: date, val_date: date, out_path: str) -> None:
@@ -55,7 +56,8 @@ def train(train_date: date, val_date: date, out_path: str) -> None:
     df_train = read_dataframe(train_url)
     df_val = read_dataframe(val_url)
 
-    print(len(df_train), len(df_val))
+    logger.info(f"df_train length is {len(df_train)}")
+    logger.info(f"df_val length is {len(df_val)}")
 
     categorical = ['PULocationID', 'DOLocationID']
     numerical = ['trip_distance']
@@ -74,7 +76,7 @@ def train(train_date: date, val_date: date, out_path: str) -> None:
     pipeline.fit(train_dicts, y_train)
     y_pred = pipeline.predict(val_dicts)
 
-    print(mean_squared_error(y_val, y_pred, squared=False))
+    logger.info(f"MSE: {mean_squared_error(y_val, y_pred, squared=False)}")
     with open(out_path, 'wb') as f_out:
         pickle.dump(pipeline, f_out)
 

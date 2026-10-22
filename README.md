@@ -56,3 +56,4 @@ cd ..
 - create a model folder: `mkdir models` and use `uv run python src/day_1/train.py --train-date=2022-01 --val-date=2022-02 --model-save-path=models/2022-01.pkl`
 - add typing and docstrings
 - add simple error handling
+- add logging: `uv add loguru`
