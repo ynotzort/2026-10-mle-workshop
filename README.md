@@ -42,3 +42,11 @@ cd ..
 - `uv run jupyter nbconvert --to=script notebooks/duration-prediction-starter.ipynb`
 - move the freshly created file into the src/day_1 folder: `mv notebooks/duration-prediction-starter.py src/day_1/`
 - lets rename it to train.py: `mv src/day_1/duration-prediction-starter.py src/day_1/train.py`
+
+### lets make the train.py script nice
+- remove all the # In[] lines from the script
+- move all the imports to top and clean up in general
+- get rid of matplotlib and seaborn
+- try to run the script: `uv run python src/day_1/train.py`
+- create a train function and entrypoint `if __name__=="__main__":`
+
