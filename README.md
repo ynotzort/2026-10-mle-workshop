@@ -51,4 +51,5 @@ cd ..
 - create a train function and entrypoint `if __name__=="__main__":`
 - introduce pipeline code
 - parametrize the train function
-
+- use argparse for parsing, and call via `uv run python src/day_1/train.py --train-date=2022-01 --val-date=2022-02 --model-save-path=model.pkl`
+    - alternatives are https://github.com/fastapi/typer and fire.
