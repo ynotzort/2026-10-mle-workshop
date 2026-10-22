@@ -15,10 +15,12 @@ just run `curl -LsSf https://astral.sh/uv/install.sh | sh`
 - change directory into `day_1` (`cd day_1`)
 - get the original notebook:
 ```bash
-
 mkdir notebooks
 cd notebooks
 wget "https://github.com/ynotzort/ml-engineering-contsructor-workshop/raw/main/01-train/duration-prediction-starter.ipynb"
 cd ..
-
 ```
+
+### create a uv project
+- initialize a uv project with `uv init --python 3.10`
+- run `uv sync`
