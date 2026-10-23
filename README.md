@@ -69,3 +69,11 @@ cd ..
 - create a `__init__.py` inside of tests/ folder (`touch tests/__init__.py`)
 - create a `test_train.py` file inside of the tests folder (has to start with `test_`) (`touch tests/test_train.py`)
 - run tests with `uv run pytest` or `make test`
+
+
+# day 2
+
+## create the project and add the dependencies
+- create a new top level folder `day_2` just below `day_1` and cd into it: `mkdir day_2 && cd day_2`
+- create a new uv project: `uv init --lib --python 3.10 duration_pred_serve`
+- change into this newly created folder: `cd duration_pred_serve`
