@@ -2,9 +2,26 @@ import pickle
 from typing import Any
 
 from fastapi import FastAPI
+from loguru import logger
 from pydantic import BaseModel, Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
-with open("models/2022-01.pkl", "rb") as f_in:
+
+class Settings(BaseSettings):
+    MODEL_PATH: str = "./model.pkl"
+    MODEL_VERSION: str = "not_defined"
+
+    # load from .env by default
+    # model_config = SettingsConfigDict(env_file='.env', env_file_encoding='utf-8')
+
+
+settings = Settings()
+
+model_path = settings.MODEL_PATH
+logger.info(f"model will be loaded from: {model_path}")
+logger.info(f"model version: {settings.MODEL_VERSION}")
+
+with open(model_path, "rb") as f_in:
     model = pickle.load(f_in)
 
 
@@ -21,6 +38,9 @@ class PredictionResponse(BaseModel):
 
     prediction_duration_minutes: float = Field(
         description="Predicted trip duration in minutes"
+    )
+    model_version: str = Field(
+        description="Model version that was used for the prediction"
     )
 
 
@@ -61,7 +81,9 @@ def predict_endpoint(predict_request: PredictRequest) -> PredictionResponse:
     prediction = post_process_prediction(prediction_raw)
 
     # create the final response
-    response = PredictionResponse(prediction_duration_minutes=prediction)
+    response = PredictionResponse(
+        prediction_duration_minutes=prediction, model_version=settings.MODEL_VERSION
+    )
     return response
 
 

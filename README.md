@@ -91,3 +91,13 @@ cd ..
 ## implement serve
 - implementing simple loading of the model file and run it via `uv run python src/duration_pred_serve/serve.py`
 - make it a webserver and run it `uv run fastapi dev src/duration_pred_serve/serve.py` or `make serve`
+
+## environment variables
+- you can create environment variables via the export command: `export HELLO=world`, this creates a variable named `HELLO` wiith the value of "world"
+- print out the value of the variable with `echo $WORLD` (note the dollar sign)
+- remove the variable via `unset HELLO`
+- in python you can access the environment variables via `os.getenv()`
+- alternatively we can use `BaseSettings` from the package `pydantic_settings`
+- now we can define the model path via `export MODEL_PATH=models/2022-01.pkl`
+- lets add it to the Makefile
+- add the MODEL_VERSION also
