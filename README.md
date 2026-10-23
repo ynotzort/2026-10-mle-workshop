@@ -77,3 +77,8 @@ cd ..
 - create a new top level folder `day_2` just below `day_1` and cd into it: `mkdir day_2 && cd day_2`
 - create a new uv project: `uv init --lib --python 3.10 duration_pred_serve`
 - change into this newly created folder: `cd duration_pred_serve`
+- add dependencies from day_1: `uv add scikit-learn==1.2.2 numpy==1.26.4`
+- lets add the testing and logging dependcies: `uv add loguru pytest`
+- add webserver dendency: `uv add "fastapi[standard]"`
+- for debugging lets add requests dependency: `uv add --dev requests`
+- copy over the model from day_1 here: `mkdir models && cp ../../day_1/models/2022-01.pkl models/`
