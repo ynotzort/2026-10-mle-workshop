@@ -106,3 +106,9 @@ cd ..
 - lets make a folder scripts `mkdir scripts`
 - inside of it lets create a `predict-test.py` file (`touch scripts/predict-test.py`)
 - we can run it via `uv run python scripts/predict-test.py`
+
+## use Docker
+- create a Dockerfile
+- build the image via `docker build -t duration-prediction:latest .`
+- run it via `docker run -it duration-prediction:latest`
+- or just use `make docker-run` which will first build the image and then run it
