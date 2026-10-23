@@ -101,3 +101,8 @@ cd ..
 - now we can define the model path via `export MODEL_PATH=models/2022-01.pkl`
 - lets add it to the Makefile
 - add the MODEL_VERSION also
+
+## implement a predict test with requests
+- lets make a folder scripts `mkdir scripts`
+- inside of it lets create a `predict-test.py` file (`touch scripts/predict-test.py`)
+- we can run it via `uv run python scripts/predict-test.py`
