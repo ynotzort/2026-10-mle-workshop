@@ -90,4 +90,4 @@ cd ..
 
 ## implement serve
 - implementing simple loading of the model file and run it via `uv run python src/duration_pred_serve/serve.py`
-- make it a webserver and run it `uv run fastapi dev src/duration_pred_serve/serve.py` 
+- make it a webserver and run it `uv run fastapi dev src/duration_pred_serve/serve.py` or `make serve`
