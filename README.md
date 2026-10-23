@@ -113,3 +113,8 @@ cd ..
 - run it via `docker run -it duration-prediction:latest`
 - or just use `make docker-run` which will first build the image and then run it
 - modeify the dockerfile to use uv and our own project
+
+## lets deploy it to the world via fly.io
+- install it via `curl -L https://fly.io/install.sh | sh` and then run as suggested `source ~/.bashrc`
+- login via `fly auth login`
+- deploy the app via `fly launch`
