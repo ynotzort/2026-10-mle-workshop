@@ -87,3 +87,6 @@ cd ..
 - create a `ping.py` file insider of `src/duration_pred_serve/` and open it
 - change the python virtual environment to use the correct day 2 environment. click on the bottom right where it says day_1 and then click browse and select `/workspaces/2026-10-mle-workshop/day_2/duration_pred_serve/.venv/bin/python`
 - run it via `/workspaces/2026-10-mle-workshop/day_2/duration_pred_serve`
+
+## implement serve
+- implementing simple loading of the model file and run it via `uv run python src/duration_pred_serve/serve.py`
