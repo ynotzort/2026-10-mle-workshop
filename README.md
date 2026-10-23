@@ -112,3 +112,4 @@ cd ..
 - build the image via `docker build -t duration-prediction:latest .`
 - run it via `docker run -it duration-prediction:latest`
 - or just use `make docker-run` which will first build the image and then run it
+- modeify the dockerfile to use uv and our own project
